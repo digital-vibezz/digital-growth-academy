@@ -1,553 +1,215 @@
-/* =========================================================
-   FONT LOADING (matches your /assets/fonts filenames)
-========================================================= */
+/* ================= FONTS ================= */
 
 @font-face {
   font-family: "Avenir Next Cyr";
   src: url("/assets/fonts/AvenirNextCyr-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
-
-@font-face {
-  font-family: "Avenir Next Cyr";
-  src: url("/assets/fonts/AvenirNextCyr-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Avenir Next Cyr";
-  src: url("/assets/fonts/AvenirNextCyr-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Avenir Next Cyr";
-  src: url("/assets/fonts/AvenirNextCyr-Demi.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Avenir Next Cyr";
   src: url("/assets/fonts/AvenirNextCyr-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
-  font-display: swap;
 }
-
-@font-face {
-  font-family: "Avenir Next Cyr";
-  src: url("/assets/fonts/AvenirNextCyr-BoldItalic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Avenir Next Cyr";
-  src: url("/assets/fonts/AvenirNextCyr-Heavy.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Bebas Neue Cyrillic";
   src: url("/assets/fonts/Bebas%20Neue%20Cyrillic%20Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
-
-/* Playfair is a variable font in your folder */
 @font-face {
   font-family: "Playfair Display";
   src: url("/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
-  font-weight: 300 900;
-  font-style: normal;
-  font-display: swap;
 }
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+/* ================= VARIABLES ================= */
 
 :root {
-  --black: #000000;
-  --white: #ffffff;
-
-  --bg-grey: #f4f4f4;
-  --bg-soft: #e9e9e4;
-
-  --btn: #199455;
-  --btn-hover: #147a45;
-
-  --hero-overlay: rgba(0, 0, 0, 0.60);
-
-  --container: 1120px;
-
-  --radius: 10px;
-  --radius-card: 14px;
-}
-
-/* =========================================================
-   RESET & BASE
-========================================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Avenir Next Cyr", "Avenir Next", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--black);
-  background: var(--white);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* =========================================================
-   TYPOGRAPHY
-========================================================= */
-
-h1 {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
-  font-size: 44px;
-  font-weight: 400;
-  margin: 0 0 12px 0;
-  color: var(--black);
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-family: "Avenir Next Cyr", "Avenir Next", Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 800;
-  margin: 0 0 14px 0;
-  color: var(--black);
-  text-transform: uppercase;
-}
-
-.subtitle {
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
-  font-weight: 700;
-  color: var(--black);
-  margin: 0 0 14px 0;
-}
-
-p {
-  margin: 0 0 14px 0;
-  font-size: 16px;
-  color: var(--black);
-}
-
-small {
-  font-size: 12px;
-}
-
-/* =========================================================
-   LAYOUT
-========================================================= */
-
-.container {
-  width: 100%;
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 64px 24px;
-}
-
-.section-white {
-  background: var(--white);
-}
-
-.section-grey {
-  background: var(--bg-grey);
-}
-
-.section-soft {
-  background: var(--bg-soft);
-}
-
-.center {
-  text-align: center;
-}
-
-.two-columns {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 56px;
-  align-items: start;
-}
-
-@media (min-width: 900px) {
-  .two-columns {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* =========================================================
-   BUTTONS (exact spec: #199455, rectangle, slight radius)
-========================================================= */
-
-.button,
-.primary-btn {
-  display: inline-block;
-  padding: 14px 26px;
-  background: var(--btn);
-  color: var(--white);
-  font-family: "Avenir Next Cyr", "Avenir Next", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 8px; /* slightly rounded corners */
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.button:hover,
-.primary-btn:hover {
-  background: var(--btn-hover);
-  transform: translateY(-1px);
-}
-
-/* =========================================================
-   HERO (matches your design structure)
-========================================================= */
-
-.hero {
-  background-image: url("/assets/headers/marketing%20results.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero-overlay {
-  background: var(--hero-overlay);
-  padding: 48px 24px 44px 24px;
-}
-
-.hero-inner {
-  width: 100%;
-  max-width: var(--container);
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero-logo {
-  width: 120px;
-  margin: 0 auto 18px auto;
-}
-
-.hero h1 {
-  color: var(--white);
-  margin-bottom: 10px;
-}
-
-.hero-subtitle {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--white);
-  opacity: 0.6; /* lift 60% */
-  margin: 0 auto 18px auto;
-  max-width: 860px;
-}
-
-.hero-meta {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin: 0 auto 18px auto;
-}
-
-.hero-meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--white);
-  opacity: 0.6; /* lift 60% */
-  font-size: 16px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.hero-meta-item img {
-  width: 18px; /* bigger icons like design */
-  height: 18px;
-}
-
-.hero-cta {
-  margin-top: 14px;
-}
-
-.hero-footnote {
-  margin-top: 14px;
-  color: var(--white);
-  opacity: 0.6; /* lift 60% */
-  font-size: 14px;
-}
-
-/* =========================================================
-   ICON CHECKLISTS (your icons have spaces, use %20)
-========================================================= */
-
-.icon-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.icon-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.icon-list .icon {
-  width: 18px;
-  height: 18px;
-  margin-top: 4px;
-  flex: 0 0 auto;
-}
-
-.icon-check {
-  background: url("/assets/icons/icon%20CHECK%20MARK.png") no-repeat center / contain;
-}
-
-.icon-date-black {
-  background: url("/assets/icons/icon%20DATE%20black.png") no-repeat center / contain;
-}
-
-.icon-time-black {
-  background: url("/assets/icons/icon%20TIME%20black.png") no-repeat center / contain;
-}
-
-.icon-zoom-black {
-  background: url("/assets/icons/icon%20ZOOM%20black.png") no-repeat center / contain;
-}
-
-.icon-price-black {
-  background: url("/assets/icons/icon%20PRICE%20black.png") no-repeat center / contain;
-}
-
-.icon-date-white {
-  background: url("/assets/icons/icon%20DATE%20white.png") no-repeat center / contain;
-}
-
-.icon-time-white {
-  background: url("/assets/icons/icon%20TIME%20white.png") no-repeat center / contain;
-}
-
-.icon-zoom-white {
-  background: url("/assets/icons/icon%20ZOOM%20white.png") no-repeat center / contain;
-}
-
-.icon-price-white {
-  background: url("/assets/icons/icon%20PRICE%20white.png") no-repeat center / contain;
-}
-
-/* =========================================================
-   EXPLANATION / LONG READ (centered like design)
-========================================================= */
-
-.explanation {
-  background: var(--bg-grey);
-}
-
-.explanation .container {
-  padding: 56px 24px;
-  text-align: center;
-}
-
-.explanation h2 {
-  margin-bottom: 10px;
+  --black:#000;
+  --white:#fff;
+  --grey:#f4f4f4;
+  --soft:#e9e9e4;
+  --btn:#199455;
+  --btn-hover:#147a45;
+  --container:1120px;
+}
+
+/* ================= BASE ================= */
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Avenir Next Cyr",sans-serif;
+  font-size:16px;
+  color:var(--black);
+  background:var(--white);
+}
+img{max-width:100%;display:block}
+
+/* ================= TYPO ================= */
+
+h1{margin:0}
+h2{
+  font-size:24px;
+  font-weight:600;
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+.subtitle{
+  font-family:"Playfair Display",serif;
+  font-size:21px;
+  font-weight:700;
+}
+.small-note{font-size:14px}
+
+/* ================= LAYOUT ================= */
+
+.container{
+  max-width:var(--container);
+  margin:auto;
+  padding:64px 24px;
+}
+.center{text-align:center}
+.two-columns{
+  display:grid;
+  gap:56px;
+}
+@media(min-width:900px){
+  .two-columns{grid-template-columns:1fr 1fr}
+}
+.align-center{align-items:center}
+
+/* ================= BUTTON ================= */
+
+.primary-btn{
+  background:var(--btn);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  display:inline-block;
+}
+.primary-btn:hover{background:var(--btn-hover)}
+
+/* ================= HERO ================= */
+
+.hero{
+  background:url("/assets/headers/marketing%20results.png") center/cover no-repeat;
+}
+.hero-overlay{
+  background:rgba(0,0,0,.6);
+}
+.hero-inner{
+  max-width:var(--container);
+  margin:auto;
+  padding:48px 24px;
+  text-align:center;
+}
+.hero-logo{width:120px;margin:0 auto 18px}
+.hero-title span{
+  background:#fff;
+  color:#000;
+  padding:10px 18px;
+  display:inline-block;
+  font-family:"Bebas Neue Cyrillic";
+  font-size:44px;
+  letter-spacing:.6px;
+}
+.hero-subtitle,
+.hero-meta-item,
+.hero-footnote{color:#fff}
+.hero-meta{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:18px 0;
+}
+.hero-meta-item{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:700;
 }
+.hero-meta-item img{width:18px}
 
-.explanation .subtitle {
-  margin-bottom: 14px;
-}
-
-.explanation p {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* =========================================================
-   WHY JOIN (image sizing + alignment)
-========================================================= */
-
-.why-join .container {
-  padding: 64px 24px;
-}
-
-.why-join-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  align-items: center;
-}
-
-@media (min-width: 900px) {
-  .why-join-grid {
-    grid-template-columns: 1fr 420px;
-  }
-}
-
-.why-join-illustration img {
-  width: 100%;
-  max-width: 420px; /* prevent oversized image */
-  margin-left: auto;
-}
-
-/* =========================================================
-   ABOUT HOST (photo sizing and layout)
-========================================================= */
-
-.about-host {
-  background: var(--bg-grey);
-}
-
-.about-host-grid {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 22px;
-  align-items: start;
-}
+/* ================= LISTS ================= */
 
-.about-host img {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  object-fit: cover;
+.plain-list{
+  padding-left:18px;
 }
-
-/* =========================================================
-   FAQ (container card like design)
-========================================================= */
-
-.faq {
-  background: var(--bg-soft);
-}
-
-.faq .container {
-  padding: 64px 24px;
+.icon-list{
+  list-style:none;
+  padding:0;
 }
-
-.faq-card {
-  max-width: 980px;
-  margin: 0 auto;
-  background: var(--white);
-  border-radius: var(--radius-card);
-  padding: 18px 22px;
-}
-
-details {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
-  padding: 14px 6px;
+.icon-list li{
+  display:flex;
+  gap:12px;
+  margin-bottom:10px;
 }
-
-details:last-child {
-  border-bottom: none;
+.icon{
+  width:18px;height:18px;
 }
+.icon-check{background:url("/assets/icons/icon%20CHECK%20MARK.png") center/contain no-repeat}
+.icon-date-black{background:url("/assets/icons/icon%20DATE%20black.png") center/contain no-repeat}
+.icon-time-black{background:url("/assets/icons/icon%20TIME%20black.png") center/contain no-repeat}
+.icon-zoom-black{background:url("/assets/icons/icon%20ZOOM%20black.png") center/contain no-repeat}
+.icon-price-black{background:url("/assets/icons/icon%20PRICE%20black.png") center/contain no-repeat}
 
-summary {
-  font-family: "Avenir Next Cyr", "Avenir Next", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* ================= SECTIONS ================= */
 
-summary::-webkit-details-marker {
-  display: none;
-}
+.section-white{background:#fff}
+.section-grey{background:#f4f4f4}
+.section-soft{background:#e9e9e4}
 
-summary::after {
-  content: "";
-  width: 18px;
-  height: 18px;
-  background: url("/assets/icons/icon%20FAQ%20dropdown.png") no-repeat center / contain;
-  transform: rotate(0deg);
-  transition: transform 0.2s ease;
-  flex: 0 0 auto;
-}
+/* ================= IMAGES ================= */
 
-details[open] summary::after {
-  transform: rotate(180deg);
+.illustration{max-width:420px}
+.host-grid{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:24px;
 }
-
-details p {
-  margin: 10px 0 0 0;
-  font-size: 16px;
+.host-photo{
+  width:120px;
+  height:120px;
+  border-radius:12px;
+  object-fit:cover;
 }
 
-/* =========================================================
-   FINAL CTA
-========================================================= */
+/* ================= FAQ ================= */
 
-.final-cta .container {
-  text-align: center;
-  padding: 64px 24px;
+.faq-card{
+  max-width:980px;
+  margin:auto;
+  background:#fff;
+  border-radius:14px;
+  padding:22px 26px;
 }
-
-/* =========================================================
-   FOOTER (logo and links)
-========================================================= */
-
-.footer {
-  background: var(--black);
-  color: var(--white);
-  padding: 44px 24px;
-  text-align: center;
+details{border-bottom:1px solid rgba(0,0,0,.1);padding:14px 0}
+summary{
+  font-weight:700;
+  cursor:pointer;
+  list-style:none;
 }
-
-.footer-logo {
-  width: 160px;
-  margin: 0 auto 18px auto;
+summary::after{
+  content:"";
+  width:18px;height:18px;
+  background:url("/assets/icons/icon%20FAQ%20dropdown.png") center/contain no-repeat;
+  float:right;
 }
 
-.footer-links a {
-  font-family: "Avenir Next Cyr", "Avenir Next", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  color: var(--white);
-  text-decoration: none;
-  margin: 0 14px;
-}
+/* ================= FOOTER ================= */
 
-.footer-links a:hover {
-  font-weight: 700;
+.footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:44px 24px;
 }
-
-.footer-copy {
-  margin-top: 14px;
-  font-size: 12px;
-  color: var(--white);
+.footer-logo{width:160px;margin-bottom:18px}
+.footer-links a{
+  color:#fff;
+  font-size:12px;
+  margin:0 14px;
+  text-decoration:none;
 }
+.footer-copy{font-size:12px;margin-top:14px}
